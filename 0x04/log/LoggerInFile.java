@@ -7,12 +7,11 @@ public class LoggerInFile {
 
     public static void main(String[] args) {
         Logger logger = Logger.getLogger("MyLog");
-        FileHandler fileHandler;
-        fileHandler = new FileHandler("logs.txt");
-        Logger.AddHandler(fileHandler);
-        simpleFormatter simpleFormatter = new SimpleFormatter();
+        FileHandler fileHandler = new FileHandler("logs.txt");
+        logger.AddHandler(fileHandler);
+        SimpleFormatter simpleFormatter = new SimpleFormatter();
         fileHandler.setFormatter(simpleFormatter);
-        Logger.info("teste de Log");
-        Logger.info("Olá, eu sou o teste da classe principal");
+        logger.info("teste de Log");
+        logger.info("Olá, eu sou o teste da classe principal");
     }
 }
